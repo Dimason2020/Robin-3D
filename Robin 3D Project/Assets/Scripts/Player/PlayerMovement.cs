@@ -67,7 +67,7 @@ public class PlayerMovement : Singleton<PlayerMovement>
     {
         currentVelocity = new Vector3(touchInput.Stick.Horizontal, 0, touchInput.Stick.Vertical);
 
-        rb.velocity = currentVelocity * 8;
+        rb.velocity = currentVelocity.normalized * 8;
 
         if (touchInput.Stick.Horizontal == 0 && touchInput.Stick.Vertical == 0)
             currentState = PlayerStates.Idle;

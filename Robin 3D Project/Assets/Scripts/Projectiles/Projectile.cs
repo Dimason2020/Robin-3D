@@ -29,7 +29,7 @@ public class Projectile : MonoBehaviour
     {
         if(collision.gameObject.TryGetComponent(out Bot bot))
         {
-            bot.Die();
+            bot.GetDamage(25);
             gameObject.SetActive(false);
         }
     }

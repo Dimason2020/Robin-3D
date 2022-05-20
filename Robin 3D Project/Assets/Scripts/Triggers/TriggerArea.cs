@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TriggerArea : MonoBehaviour
 {
-    private BaseBotData botData;
+    [SerializeField] private BaseBotData botData;
     private BaseBotAI botAI;
 
     private SphereCollider triggerCollider;
@@ -23,9 +23,14 @@ public class TriggerArea : MonoBehaviour
     private bool playerInRange;
     private Transform target;
 
+    private void Awake()
+    {
+        triggerCollider = GetComponent<SphereCollider>();
+        botAI = GetComponentInParent<BaseBotAI>();
+    }
+
     private void Start()
     {
-        botAI = GetComponentInParent<BaseBotAI>();
         botData = botAI.botData;
 
         triggerCollider.radius = botData.triggerDistance;

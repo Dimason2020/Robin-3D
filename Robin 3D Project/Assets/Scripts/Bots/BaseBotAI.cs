@@ -10,6 +10,7 @@ public class BaseBotAI : MonoBehaviour
     protected NavMeshAgent agent;
     protected Animator animator;
 
+    private HealthBar healthBar;
     private TriggerArea triggerArea;
 
     protected BotState botState;
@@ -23,12 +24,16 @@ public class BaseBotAI : MonoBehaviour
         animator = GetComponent<Animator>();
 
         triggerArea = GetComponentInChildren<TriggerArea>();
+        healthBar = GetComponentInChildren<HealthBar>();
     }
 
     protected virtual void Start()
     {
         cooldown = botData.cooldownTime;
         healthPoint = botData.healthPoint;
+
+        healthBar.SetMaxHealth(botData.healthPoint);
+        healthBar.SetHealth(healthPoint);
 
         ChangeState(BotState.Idle, "idle");
     }
@@ -68,6 +73,8 @@ public class BaseBotAI : MonoBehaviour
 
     protected void Idle()
     {
+        agent.isStopped = true;
+
         if (triggerArea.PlayerInRange)
         {
             ChangeState(BotState.Move, "move");
@@ -76,6 +83,7 @@ public class BaseBotAI : MonoBehaviour
 
     protected void Move()
     {
+        agent.isStopped = false;
         agent.SetDestination(triggerArea.Target.position);
 
         if(triggerArea.Distance <= 2f)
@@ -101,9 +109,10 @@ public class BaseBotAI : MonoBehaviour
 
     protected void Cooldown()
     {
-        cooldown -= Time.deltaTime;
+        agent.isStopped = true;
 
-        if(cooldown <= 0)
+        cooldown -= Time.deltaTime;
+        if (cooldown <= 0)
         {
             if (triggerArea.PlayerInRange)
             {
@@ -122,13 +131,16 @@ public class BaseBotAI : MonoBehaviour
     {
         ChangeState(BotState.Dead, "idle");
         agent.isStopped = true;
+        healthBar.gameObject.SetActive(false);
     }
 
     public void GetDamage(int damagePoint)
     {
         healthPoint -= damagePoint;
 
-        if(healthPoint <= 0)
+        healthBar.SetHealth(healthPoint);
+
+        if (healthPoint <= 0)
         {
             Die();
         }

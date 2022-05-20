@@ -37,7 +37,7 @@ public class TriggerArea : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(out PlayerMovement player))
+        if(other.TryGetComponent(out Player player))
         {
             target = player.transform;
             playerInRange = true;
@@ -46,7 +46,7 @@ public class TriggerArea : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent(out PlayerMovement player))
+        if (other.TryGetComponent(out Player player))
         {
             playerInRange = false;
         }

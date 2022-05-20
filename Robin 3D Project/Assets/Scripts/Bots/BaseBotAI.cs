@@ -32,6 +32,8 @@ public class BaseBotAI : MonoBehaviour
         cooldown = botData.cooldownTime;
         healthPoint = botData.healthPoint;
 
+        agent.speed = botData.movementSpeed;
+
         healthBar.SetMaxHealth(botData.healthPoint);
         healthBar.SetHealth(healthPoint);
 

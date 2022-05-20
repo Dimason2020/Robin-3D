@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class FocusArea : MonoBehaviour
 {
-    private PlayerMovement playerMovement;
+    private Player player;
 
     [SerializeField] private Transform area;
     [SerializeField] private Transform targetCircle;
 
+    public bool IsHasTarget { get => targets.Count != 0; }
     [SerializeField] private List<Bot> targets = new List<Bot>();
 
     private void Awake()
     {
-        playerMovement = GetComponentInParent<PlayerMovement>();
+        player = GetComponentInParent<Player>();
 
         area.SetParent(null);
         targetCircle.SetParent(null);
@@ -30,7 +31,7 @@ public class FocusArea : MonoBehaviour
         {
             Transform targetPos = GetClosestEnemy(targets);
 
-            playerMovement.ChangeTargetForAim(targetPos,
+            player.ChangeTargetForAim(targetPos,
                 RotationType.Focused);
 
             targetCircle.position = new Vector3(targetPos.position.x,
@@ -48,7 +49,7 @@ public class FocusArea : MonoBehaviour
 
         if(targets.Count <= 0)
         {
-            playerMovement.ChangeTargetForAim(null, RotationType.NotFocused);
+            player.ChangeTargetForAim(null, RotationType.NotFocused);
             targetCircle.gameObject.SetActive(false);
         }
     }

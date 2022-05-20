@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Swordman Enemy
   m_EditorClassIdentifier: 
   healthPoint: 120
-  movementSpeed: 12
+  movementSpeed: 3
   damagePoint: 15
   triggerDistance: 10
   cooldownTime: 1

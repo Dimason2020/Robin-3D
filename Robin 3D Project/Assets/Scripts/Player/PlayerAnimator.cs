@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
 {
-    private PlayerMovement playerMovement;
+    private Player player;
     private TouchInput touchInput;
     private Animator animator;
 
@@ -12,7 +12,7 @@ public class PlayerAnimator : MonoBehaviour
     {
         touchInput = TouchInput.Instance;
 
-        playerMovement = GetComponent<PlayerMovement>();
+        player = GetComponent<Player>();
         animator = GetComponent<Animator>();
     }
 
@@ -23,26 +23,28 @@ public class PlayerAnimator : MonoBehaviour
 
     private void CheckCurrentState()
     {
-        switch (playerMovement.PlayerState)
+        switch (player.PlayerState)
         {
             case PlayerStates.Idle:
 
+                animator.SetBool("focusedMove", false);
                 SetAnimation("idle");
                 break;
 
             case PlayerStates.IdleAndAim:
 
-                SetAnimation("idle");
+                animator.SetBool("focusedMove", true);
                 break;
 
             case PlayerStates.Move:
 
+                animator.SetBool("focusedMove", false);
                 SetAnimation("move");
                 break;
 
             case PlayerStates.MoveAndAim:
 
-                SetAnimation("focusedMove");
+                animator.SetBool("focusedMove", true);
                 break;
         }
     }
@@ -51,7 +53,6 @@ public class PlayerAnimator : MonoBehaviour
     {
         animator.SetBool("idle", false);
         animator.SetBool("move", false);
-        animator.SetBool("focusedMove", false);
 
         animator.SetBool(newAnim, true);
         SetAnimationVelocity();

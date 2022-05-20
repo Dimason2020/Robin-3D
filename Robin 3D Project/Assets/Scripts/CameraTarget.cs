@@ -8,7 +8,7 @@ public class CameraTarget : Singleton<CameraTarget>
     [SerializeField] private float distance = 10f;
     private Transform previousTarget;
     private bool showTarget = false;
-    private PlayerMovement player;
+    private Player player;
     private float speed = 50f;
     public static Action<bool> OnEnabledInput;
 
@@ -21,7 +21,7 @@ public class CameraTarget : Singleton<CameraTarget>
 
     private void Start()
     {
-        player = PlayerMovement.Instance;
+        player = Player.Instance;
         target = player.transform;
     }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : Singleton<PlayerMovement>
+public class Player : Singleton<Player>
 {
     public PlayerStates PlayerState { get => currentState; }
     [SerializeField] private PlayerStates currentState;
@@ -11,6 +11,7 @@ public class PlayerMovement : Singleton<PlayerMovement>
     [SerializeField] private RotationType rotationType;
 
     private TouchInput touchInput;
+    private FocusArea focusArea;
     private Transform target;
     private Rigidbody rb;
 
@@ -24,10 +25,10 @@ public class PlayerMovement : Singleton<PlayerMovement>
 
         touchInput = TouchInput.Instance;
 
+        focusArea = GetComponentInChildren<FocusArea>();
         rb = GetComponent<Rigidbody>();
-        //ChangeState(PlayerStates.IdleAndAim);
+        ChangeState(PlayerStates.Idle);
     }
-
 
     private void Update()
     {
@@ -41,6 +42,7 @@ public class PlayerMovement : Singleton<PlayerMovement>
             case PlayerStates.IdleAndAim:
 
                 Idle();
+                Attack();
                 Rotate();
                 break;
 
@@ -53,6 +55,7 @@ public class PlayerMovement : Singleton<PlayerMovement>
             case PlayerStates.MoveAndAim:
 
                 Move();
+                Attack();
                 Rotate();
                 break;
         }
@@ -62,7 +65,10 @@ public class PlayerMovement : Singleton<PlayerMovement>
     {
         if (touchInput.Stick.Horizontal != 0 && touchInput.Stick.Vertical != 0)
             currentState = PlayerStates.Move;
-
+        else if (focusArea.IsHasTarget)
+            currentState = PlayerStates.IdleAndAim;
+        else if (!focusArea.IsHasTarget)
+            currentState = PlayerStates.Idle;
     }
 
     private void Move()
@@ -73,6 +79,15 @@ public class PlayerMovement : Singleton<PlayerMovement>
 
         if (touchInput.Stick.Horizontal == 0 && touchInput.Stick.Vertical == 0)
             currentState = PlayerStates.Idle;
+        else if (focusArea.IsHasTarget)
+            currentState = PlayerStates.MoveAndAim;
+        else if (!focusArea.IsHasTarget)
+            currentState = PlayerStates.Move;
+    }
+
+    private void Attack()
+    {
+
     }
 
     private void Rotate()
@@ -85,7 +100,7 @@ public class PlayerMovement : Singleton<PlayerMovement>
                 Vector3 direction = target.position - transform.position;
                 float rotate = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
 
-                transform.rotation = Quaternion.Euler(transform.rotation.x, 
+                transform.rotation = Quaternion.Euler(transform.rotation.x,
                     rotate + 40f, transform.rotation.z);
                 //ChangeState(PlayerStates.MoveAndAim);
                 break;
@@ -107,14 +122,14 @@ public class PlayerMovement : Singleton<PlayerMovement>
         }
     }
 
-    //public void ChangeState(PlayerStates newState)
-    //{
-    //    currentState = newState;
-    //}
+    public void ChangeState(PlayerStates newState)
+    {
+        currentState = newState;
+    }
 
-    //public void ChangeTargetForAim(Transform _target, RotationType _rotationType)
-    //{
-    //    target = _target;
-    //    rotationType = _rotationType;
-    //}
+    public void ChangeTargetForAim(Transform _target, RotationType _rotationType)
+    {
+        target = _target;
+        rotationType = _rotationType;
+    }
 }

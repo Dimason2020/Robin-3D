@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88487fc96b93c7448a01b7101a30d3fd, type: 3}
   m_Name: Swordman Enemy
   m_EditorClassIdentifier: 
-  healthPoint: 150
+  healthPoint: 120
   movementSpeed: 12
   damagePoint: 15
   triggerDistance: 10

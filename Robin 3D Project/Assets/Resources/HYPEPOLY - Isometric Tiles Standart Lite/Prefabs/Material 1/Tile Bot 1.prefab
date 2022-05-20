@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3149242553499254772}
   - component: {fileID: 4840709871523979}
   - component: {fileID: -9000614067960430987}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tile Bot 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,6 +108,10 @@ PrefabInstance:
     - target: {fileID: 3196648517536708714, guid: 3d3e1647da524af438765070d6d4fc6c, type: 3}
       propertyPath: m_Name
       value: Tile Top 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196648517536708714, guid: 3d3e1647da524af438765070d6d4fc6c, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 3d3e1647da524af438765070d6d4fc6c, type: 3}
       propertyPath: m_StaticEditorFlags

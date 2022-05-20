@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Axeman Enemy
   m_EditorClassIdentifier: 
   healthPoint: 50
-  movementSpeed: 15
+  movementSpeed: 18
   damagePoint: 8
   triggerDistance: 12
   cooldownTime: 0.5

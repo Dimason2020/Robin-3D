@@ -16,6 +16,8 @@ public class PlayerMovement : Singleton<PlayerMovement>
 
     private Vector3 currentVelocity;
 
+    public float gravity = -0.5f;
+
     public override void Awake()
     {
         base.Awake();
@@ -68,6 +70,7 @@ public class PlayerMovement : Singleton<PlayerMovement>
     private void Move()
     {
         currentVelocity = new Vector3(touchInput.Stick.Horizontal, 0, touchInput.Stick.Vertical);
+        currentVelocity.y = gravity;
 
         rb.velocity = currentVelocity.normalized * 8;
 

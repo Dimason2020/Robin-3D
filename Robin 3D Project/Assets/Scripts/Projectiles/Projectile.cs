@@ -27,7 +27,7 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.TryGetComponent(out Bot bot))
+        if(collision.gameObject.TryGetComponent(out BaseBotAI bot))
         {
             bot.GetDamage(25);
             gameObject.SetActive(false);

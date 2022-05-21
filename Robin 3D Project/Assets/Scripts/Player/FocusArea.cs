@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +9,7 @@ public class FocusArea : MonoBehaviour
     [SerializeField] private Transform targetCircle;
 
     public bool IsHasTarget { get => targets.Count != 0; }
-    [SerializeField] private List<Bot> targets = new List<Bot>();
+    [SerializeField] private List<BaseBotAI> targets = new List<BaseBotAI>();
 
     private void Awake()
     {
@@ -42,7 +41,7 @@ public class FocusArea : MonoBehaviour
         }
     }
 
-    private void RemoveBotFromList(Bot bot)
+    private void RemoveBotFromList(BaseBotAI bot)
     {
         bot.OnBotDead -= RemoveBotFromList;
         targets.Remove(bot);
@@ -56,7 +55,7 @@ public class FocusArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(out Bot bot)
+        if(other.TryGetComponent(out BaseBotAI bot)
             && !bot.Dead)
         {
             targets.Add(bot);
@@ -66,18 +65,18 @@ public class FocusArea : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent(out Bot bot))
+        if (other.TryGetComponent(out BaseBotAI bot))
         {
             RemoveBotFromList(bot);
         }
     }
 
-    private Transform GetClosestEnemy(List<Bot> enemies)
+    private Transform GetClosestEnemy(List<BaseBotAI> enemies)
     {
         Transform closestEnemy = null;
         float minDist = Mathf.Infinity;
         Vector3 currentPos = transform.position;
-        foreach (Bot enemy in enemies)
+        foreach (BaseBotAI enemy in enemies)
         {
             float dist = Vector3.Distance(enemy.transform.position, currentPos);
             if (dist < minDist)

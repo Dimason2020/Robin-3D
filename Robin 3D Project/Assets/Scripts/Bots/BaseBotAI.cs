@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,28 +6,41 @@ public class BaseBotAI : MonoBehaviour
 {
     [SerializeField] public BaseBotData botData;
 
+    private RagdollController ragdollController;
+    private CapsuleCollider capsuleCollider;
     protected NavMeshAgent agent;
     protected Animator animator;
+    protected Player player;
+    private Rigidbody rb;
+
 
     private HealthBar healthBar;
-    private TriggerArea triggerArea;
+    protected TriggerArea triggerArea;
 
     protected BotState botState;
 
     private float cooldown = 3f;
     private int healthPoint;
 
+    public bool Dead;
+    public Action<BaseBotAI> OnBotDead;
+
     protected virtual void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
 
+        ragdollController = GetComponentInChildren<RagdollController>();
         triggerArea = GetComponentInChildren<TriggerArea>();
+        capsuleCollider = GetComponent<CapsuleCollider>();
         healthBar = GetComponentInChildren<HealthBar>();
+        rb = GetComponent<Rigidbody>();
     }
 
     protected virtual void Start()
     {
+        player = Player.Instance;
+
         cooldown = botData.cooldownTime;
         healthPoint = botData.healthPoint;
 
@@ -73,7 +85,7 @@ public class BaseBotAI : MonoBehaviour
         ChangeAnimation(newAnim);
     }
 
-    protected void Idle()
+    protected virtual void Idle()
     {
         agent.isStopped = true;
 
@@ -83,12 +95,12 @@ public class BaseBotAI : MonoBehaviour
         }
     }
 
-    protected void Move()
+    protected virtual void Move()
     {
         agent.isStopped = false;
         agent.SetDestination(triggerArea.Target.position);
 
-        if(triggerArea.Distance <= 2f)
+        if(triggerArea.Distance <= botData.attackDistance)
         {
             ChangeState(BotState.Attack, "attack");
         }
@@ -98,9 +110,14 @@ public class BaseBotAI : MonoBehaviour
         }
     }
 
-    protected void Attack()
+    protected virtual void Attack()
     {
+        agent.isStopped = true;
 
+        Vector3 directionToPlayer = player.transform.position - transform.position;
+        float rotateAngle = Mathf.Atan2(directionToPlayer.x, directionToPlayer.z) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0, rotateAngle, 0);
     }
 
     public void StartCooldown()
@@ -134,6 +151,12 @@ public class BaseBotAI : MonoBehaviour
         ChangeState(BotState.Dead, "idle");
         agent.isStopped = true;
         healthBar.gameObject.SetActive(false);
+
+        Dead = true;
+        OnBotDead?.Invoke(this);
+        animator.enabled = false;
+        capsuleCollider.enabled = false;
+        ragdollController.SetRagdoll(true);
     }
 
     public void GetDamage(int damagePoint)
@@ -153,6 +176,7 @@ public class BaseBotAI : MonoBehaviour
         animator.SetBool("idle", false);
         animator.SetBool("move", false);
         animator.SetBool("attack", false);
+        animator.SetBool("rush", false);
 
         animator.SetBool(newAnim, true);
     }

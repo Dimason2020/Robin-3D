@@ -54,7 +54,10 @@ public class RagdollController : MonoBehaviour
         }
 
         if (flag)
+        {
+            rigidbodies[0].AddForce(transform.up * 150f, ForceMode.Impulse);
             ThrowWeapon();
+        }
     }
 
     private void ThrowWeapon()

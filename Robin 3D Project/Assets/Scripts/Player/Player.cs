@@ -10,6 +10,8 @@ public class Player : Singleton<Player>
     public RotationType RotationType { get => rotationType; }
     [SerializeField] private RotationType rotationType;
 
+    [SerializeField] private MainCharacterData characterData;
+
     private TouchInput touchInput;
     private FocusArea focusArea;
     private Transform target;
@@ -75,7 +77,7 @@ public class Player : Singleton<Player>
     {
         currentVelocity = new Vector3(touchInput.Stick.Horizontal, 0, touchInput.Stick.Vertical);
 
-        rb.velocity = currentVelocity.normalized * 8;
+        rb.velocity = currentVelocity.normalized * characterData.movementSpeed;
 
         if (touchInput.Stick.Horizontal == 0 && touchInput.Stick.Vertical == 0)
             currentState = PlayerStates.Idle;

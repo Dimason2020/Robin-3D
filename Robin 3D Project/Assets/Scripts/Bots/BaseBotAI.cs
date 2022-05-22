@@ -18,7 +18,7 @@ public class BaseBotAI : MonoBehaviour
     private ArmorBar armorBar;
     protected TriggerArea triggerArea;
 
-    protected BotState botState;
+    [SerializeField] protected BotState botState;
 
     private float cooldown = 3f;
     protected int healthPoint;
@@ -124,10 +124,7 @@ public class BaseBotAI : MonoBehaviour
     {
         agent.isStopped = true;
 
-        Vector3 directionToPlayer = player.transform.position - transform.position;
-        float rotateAngle = Mathf.Atan2(directionToPlayer.x, directionToPlayer.z) * Mathf.Rad2Deg;
-
-        transform.rotation = Quaternion.Euler(0, rotateAngle - 12f, 0);
+        RotateToTarget();
     }
 
     public void StartCooldown()
@@ -136,7 +133,7 @@ public class BaseBotAI : MonoBehaviour
         Debug.Log("Start Cooldown");
     }
 
-    protected void Cooldown()
+    protected virtual void Cooldown()
     {
         agent.isStopped = true;
 
@@ -187,6 +184,19 @@ public class BaseBotAI : MonoBehaviour
             }
         }
         
+    }
+
+    protected void RotateToTarget()
+    {
+        Vector3 directionToPlayer = player.transform.position
+            - transform.position;
+
+        float rotateAngle = Mathf.Atan2(directionToPlayer.x,
+            directionToPlayer.z) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0,
+            rotateAngle + botData.rotationOffset,
+            0);
     }
 
     private void ChangeAnimation(string newAnim)

@@ -23,4 +23,7 @@ public class BaseBotData : MainCharacterData
 
     [Header("Время передышки в секундах")]
     public float cooldownTime;
+
+    [Header("Дополнительное смещение")]
+    public float rotationOffset;
 }

@@ -16697,7 +16697,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.3376905, y: -0.000000022904077, z: 0.0000000082171905, w: 0.94125724}
+  m_LocalRotation: {x: 0.3376905, y: 0.000000022904077, z: -0.0000000082171905, w: 0.94125724}
   m_LocalPosition: {x: 3.9750953, y: 13.148603, z: -15.9287815}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -20487,7 +20487,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225898306}
-  m_LocalRotation: {x: 0.3376905, y: -0.000000022904077, z: 0.0000000082171905, w: 0.94125724}
+  m_LocalRotation: {x: 0.3376905, y: 0.000000022904077, z: -0.0000000082171905, w: 0.94125724}
   m_LocalPosition: {x: 3.9750953, y: 13.148603, z: -15.9287815}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -34542,7 +34542,6 @@ Transform:
   m_Children:
   - {fileID: 4158163216500267}
   - {fileID: 1164873725}
-  - {fileID: 4054355493100056658}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -38003,95 +38002,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spearman Boss
       objectReference: {fileID: 0}
-    - target: {fileID: 1554631916795561097, guid: 22278e40af3cad94096a1b72c172a25f, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 4769354834884156657, guid: 22278e40af3cad94096a1b72c172a25f, type: 3}
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4769354834884156657, guid: 22278e40af3cad94096a1b72c172a25f, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4769354834884156657, guid: 22278e40af3cad94096a1b72c172a25f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4872146186173835651, guid: 22278e40af3cad94096a1b72c172a25f, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4872146186173835651, guid: 22278e40af3cad94096a1b72c172a25f, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 22278e40af3cad94096a1b72c172a25f, type: 3}
---- !u!4 &4054355493100056658 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8365036618653149151, guid: ec437299f7ef57542906a4b92e559738, type: 3}
-  m_PrefabInstance: {fileID: 5500411006827190157}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &5500411006827190157
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1991379158}
-    m_Modifications:
-    - target: {fileID: 8365036618653149150, guid: ec437299f7ef57542906a4b92e559738, type: 3}
-      propertyPath: m_Name
-      value: Crossbowman Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365036618653149151, guid: ec437299f7ef57542906a4b92e559738, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365036618653149151, guid: ec437299f7ef57542906a4b92e559738, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.469118
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365036618653149151, guid: ec437299f7ef57542906a4b92e559738, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -4.409398
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365036618653149151, guid: ec437299f7ef57542906a4b92e559738, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 19.982449
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365036618653149151, guid: ec437299f7ef57542906a4b92e559738, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365036618653149151, guid: ec437299f7ef57542906a4b92e559738, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365036618653149151, guid: ec437299f7ef57542906a4b92e559738, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365036618653149151, guid: ec437299f7ef57542906a4b92e559738, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365036618653149151, guid: ec437299f7ef57542906a4b92e559738, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365036618653149151, guid: ec437299f7ef57542906a4b92e559738, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365036618653149151, guid: ec437299f7ef57542906a4b92e559738, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365036618962929014, guid: ec437299f7ef57542906a4b92e559738, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365036618962929014, guid: ec437299f7ef57542906a4b92e559738, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ec437299f7ef57542906a4b92e559738, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 22278e40af3cad94096a1b72c172a25f, type: 3}

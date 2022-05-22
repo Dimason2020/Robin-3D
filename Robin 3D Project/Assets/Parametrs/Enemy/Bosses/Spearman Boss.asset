@@ -15,10 +15,10 @@ MonoBehaviour:
   movementSpeed: 8
   healthPoint: 250
   armorPoint: 125
-  rushSpeed: 20
+  rushSpeed: 18
   damagePoint: 30
   triggerDistance: 15
   attackDistance: 5
-  rushStartDistance: 15
+  rushStartDistance: 17
   cooldownTime: 1.5
   rotationOffset: -12

@@ -56,7 +56,7 @@ public class FocusArea : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.TryGetComponent(out BaseBotAI bot)
-            && !bot.Dead)
+            && !bot.IsDead)
         {
             targets.Add(bot);
             bot.OnBotDead += RemoveBotFromList;

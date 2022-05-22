@@ -1003,7 +1003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   botData: {fileID: 11400000, guid: 3859d7326bb868a4c88fa6fb2eb2cdf1, type: 2}
-  Dead: 0
+  rushParticle: {fileID: 549672285922074303}
 --- !u!1 &1554631916886642451
 GameObject:
   m_ObjectHideFlags: 0
@@ -2259,7 +2259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1311670597902315963, guid: bbcff1603a373e749bfb8999e2631e8e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1311670597902478747, guid: bbcff1603a373e749bfb8999e2631e8e, type: 3}
       propertyPath: m_RootOrder
@@ -2326,6 +2326,11 @@ PrefabInstance:
 --- !u!4 &549672285907917823 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1311670597902478747, guid: bbcff1603a373e749bfb8999e2631e8e, type: 3}
+  m_PrefabInstance: {fileID: 1554631916209452644}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &549672285922074303 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1311670597920827611, guid: bbcff1603a373e749bfb8999e2631e8e, type: 3}
   m_PrefabInstance: {fileID: 1554631916209452644}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1554631916918216277

@@ -18,13 +18,14 @@ public class BaseBotAI : MonoBehaviour
     private ArmorBar armorBar;
     protected TriggerArea triggerArea;
 
-    [SerializeField] protected BotState botState;
+    protected BotState botState;
 
     private float cooldown = 3f;
     protected int healthPoint;
     protected int armorPoint;
 
-    public bool Dead;
+    public bool IsDead { get => dead; }
+    private bool dead;
     public Action<BaseBotAI> OnBotDead;
 
     protected virtual void Awake()
@@ -158,7 +159,7 @@ public class BaseBotAI : MonoBehaviour
         ChangeState(BotState.Dead, "idle");
         agent.isStopped = true;
 
-        Dead = true;
+        dead = true;
         OnBotDead?.Invoke(this);
         animator.enabled = false;
         capsuleCollider.enabled = false;

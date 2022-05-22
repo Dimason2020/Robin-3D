@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class Spearman : BaseMeleeBot
 {
+    [SerializeField] private ParticleSystem rushParticle;
+
     private Vector3 rushTarget;
+
+    protected override void Start()
+    {
+        base.Start();
+
+        var emmision = rushParticle.emission;
+        emmision.enabled = false;
+    }
 
     protected override void Update()
     {
@@ -38,6 +48,9 @@ public class Spearman : BaseMeleeBot
         ChangeState(BotState.Rush, "rush");
 
         Debug.Log("Start Rushing!");
+
+        var emmision = rushParticle.emission;
+        emmision.enabled = true;
     }
 
     private void Rush()
@@ -50,6 +63,10 @@ public class Spearman : BaseMeleeBot
             ChangeState(BotState.Attack, "attack");
 
             agent.speed = botData.movementSpeed;
+
+            var emmision = rushParticle.emission;
+            emmision.enabled = false;
         }
     }
+
 }

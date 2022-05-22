@@ -21,3 +21,4 @@ MonoBehaviour:
   attackDistance: 5
   rushStartDistance: 15
   cooldownTime: 1.5
+  rotationOffset: -12

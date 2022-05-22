@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88487fc96b93c7448a01b7101a30d3fd, type: 3}
   m_Name: Spearman Enemy
   m_EditorClassIdentifier: 
-  healthPoint: 75
   movementSpeed: 6
+  healthPoint: 75
+  armorPoint: 0
   rushSpeed: 10
   damagePoint: 15
   triggerDistance: 15
   attackDistance: 2
   rushStartDistance: 6
   cooldownTime: 1
+  rotationOffset: -12

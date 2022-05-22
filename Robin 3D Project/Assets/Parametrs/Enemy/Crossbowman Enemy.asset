@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88487fc96b93c7448a01b7101a30d3fd, type: 3}
-  m_Name: Axeman Enemy
+  m_Name: Crossbowman Enemy
   m_EditorClassIdentifier: 
-  movementSpeed: 7
-  healthPoint: 50
+  movementSpeed: 5
+  healthPoint: 85
   armorPoint: 0
   rushSpeed: 0
-  damagePoint: 8
-  triggerDistance: 12
-  attackDistance: 3
+  damagePoint: 15
+  triggerDistance: 15
+  attackDistance: 15
   rushStartDistance: 0
-  cooldownTime: 0.5
+  cooldownTime: 2
+  rotationOffset: 6.3

@@ -10,6 +10,9 @@ public class Player : Singleton<Player>
     public RotationType RotationType { get => rotationType; }
     [SerializeField] private RotationType rotationType;
 
+    public CharacterType Type { get => type;  }
+    [SerializeField] private CharacterType type;
+
     [SerializeField] private MainCharacterData characterData;
 
     private TouchInput touchInput;

@@ -4183,6 +4183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   rotationType: 0
+  type: 1
   characterData: {fileID: 11400000, guid: 50d5852d8713883409dac3cf9872007f, type: 2}
 --- !u!1 &846977229920327863
 GameObject:
@@ -14232,7 +14233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8592876449704432124, guid: 6b5d591dbb72ac04a80d42bbb710cb7a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.010231464
+      value: -0.010230987
       objectReference: {fileID: 0}
     - target: {fileID: 8592876449704432124, guid: 6b5d591dbb72ac04a80d42bbb710cb7a, type: 3}
       propertyPath: m_LocalRotation.w

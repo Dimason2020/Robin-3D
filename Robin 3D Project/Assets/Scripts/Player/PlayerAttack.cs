@@ -10,6 +10,10 @@ public class PlayerAttack : MonoBehaviour
 
     public void Attack()
     {
-        Instantiate(projectile, shootPoint.position, shootPoint.rotation);
+        Projectile arrow = Instantiate(projectile, 
+            shootPoint.position, 
+            shootPoint.rotation);
+
+        arrow.SetProjectile(CharacterType.Enemy);
     }
 }

@@ -5,17 +5,24 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     private Rigidbody rb;
+    private CharacterType targetType;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        Fly();
-        StartCoroutine(DisableProjectile());
+        
     }
 
     private void Fly()
     {
         rb.velocity = transform.forward * 15f;
+    }
+
+    public void SetProjectile(CharacterType _targetType)
+    {
+        targetType = _targetType;
+        Fly();
+        StartCoroutine(DisableProjectile());
     }
 
     private IEnumerator DisableProjectile()
@@ -25,11 +32,19 @@ public class Projectile : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        if(collision.gameObject.TryGetComponent(out BaseBotAI bot))
+        if(collider.TryGetComponent(out BaseBotAI bot)
+            && targetType == bot.Type)
         {
             bot.GetDamage(25);
+            gameObject.SetActive(false);
+        }
+
+        if (collider.TryGetComponent(out Player player)
+            && targetType == player.Type)
+        {
+            //player.GetDamage(25);
             gameObject.SetActive(false);
         }
     }

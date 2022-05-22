@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class BaseRangeBot : BaseBotAI
 {
-    [SerializeField] private GameObject arrowPrefab;
+    [SerializeField] private Projectile arrowPrefab;
     [SerializeField] private Transform shootPoint;
 
     public void Shoot()
     {
-        Instantiate(arrowPrefab,
+        Projectile arrow = Instantiate(arrowPrefab,
             shootPoint.position,
             shootPoint.rotation);
+
+        arrow.SetProjectile(CharacterType.Friend);
     }
 
     protected override void Cooldown()

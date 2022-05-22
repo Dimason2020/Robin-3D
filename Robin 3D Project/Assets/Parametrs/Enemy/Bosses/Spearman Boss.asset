@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88487fc96b93c7448a01b7101a30d3fd, type: 3}
   m_Name: Spearman Boss
   m_EditorClassIdentifier: 
-  healthPoint: 500
   movementSpeed: 8
+  healthPoint: 250
+  armorPoint: 125
   rushSpeed: 20
   damagePoint: 30
   triggerDistance: 15

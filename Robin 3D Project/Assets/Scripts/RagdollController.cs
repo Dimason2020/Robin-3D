@@ -12,8 +12,9 @@ public class RagdollController : MonoBehaviour
     [Header("Физические тела")]
     [SerializeField] private Rigidbody[] rigidbodies;
 
-    [Header("Оружие в руках")]
+    [Header("Оружие и броня")]
     [SerializeField] private Transform[] weapons;
+    [SerializeField] private Transform[] armors;
 
     private void Awake()
     {
@@ -57,6 +58,7 @@ public class RagdollController : MonoBehaviour
         {
             rigidbodies[0].AddForce(transform.up * 150f, ForceMode.Impulse);
             ThrowWeapon();
+            ThrowArmor();
         }
     }
 
@@ -65,6 +67,16 @@ public class RagdollController : MonoBehaviour
         foreach (Transform item in weapons)
         {
             item.SetParent(null);
+        }
+    }
+
+    public void ThrowArmor()
+    {
+        foreach (Transform item in armors)
+        {
+            item.SetParent(null);
+            item.GetComponent<Rigidbody>().isKinematic = false;
+            item.GetComponent<MeshCollider>().enabled = true;
         }
     }
 }

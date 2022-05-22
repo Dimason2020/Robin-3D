@@ -3,6 +3,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "Parametrs/Bot Data")]
 public class BaseBotData : MainCharacterData
 {
+    [Header("Количество брони")]
+    public int armorPoint;
+
     [Header("Скорость движения при раше")]
     public float rushSpeed;
 

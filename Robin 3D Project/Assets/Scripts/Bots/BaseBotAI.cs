@@ -6,7 +6,7 @@ public class BaseBotAI : MonoBehaviour
 {
     [SerializeField] public BaseBotData botData;
 
-    private RagdollController ragdollController;
+    protected RagdollController ragdollController;
     private CapsuleCollider capsuleCollider;
     protected NavMeshAgent agent;
     protected Animator animator;
@@ -15,12 +15,14 @@ public class BaseBotAI : MonoBehaviour
 
 
     private HealthBar healthBar;
+    private ArmorBar armorBar;
     protected TriggerArea triggerArea;
 
     protected BotState botState;
 
     private float cooldown = 3f;
-    private int healthPoint;
+    protected int healthPoint;
+    protected int armorPoint;
 
     public bool Dead;
     public Action<BaseBotAI> OnBotDead;
@@ -34,6 +36,7 @@ public class BaseBotAI : MonoBehaviour
         triggerArea = GetComponentInChildren<TriggerArea>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         healthBar = GetComponentInChildren<HealthBar>();
+        armorBar = GetComponentInChildren<ArmorBar>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -43,11 +46,18 @@ public class BaseBotAI : MonoBehaviour
 
         cooldown = botData.cooldownTime;
         healthPoint = botData.healthPoint;
+        armorPoint = botData.armorPoint;
 
         agent.speed = botData.movementSpeed;
 
-        healthBar.SetMaxHealth(botData.healthPoint);
-        healthBar.SetHealth(healthPoint);
+        healthBar.SetMaxValue(botData.healthPoint);
+        healthBar.SetValue(healthPoint);
+
+        if(armorBar != null)
+        {
+            armorBar.SetMaxValue(botData.armorPoint);
+            armorBar.SetValue(armorPoint);
+        }
 
         ChangeState(BotState.Idle, "idle");
     }
@@ -117,7 +127,7 @@ public class BaseBotAI : MonoBehaviour
         Vector3 directionToPlayer = player.transform.position - transform.position;
         float rotateAngle = Mathf.Atan2(directionToPlayer.x, directionToPlayer.z) * Mathf.Rad2Deg;
 
-        transform.rotation = Quaternion.Euler(0, rotateAngle, 0);
+        transform.rotation = Quaternion.Euler(0, rotateAngle - 12f, 0);
     }
 
     public void StartCooldown()
@@ -150,7 +160,6 @@ public class BaseBotAI : MonoBehaviour
     {
         ChangeState(BotState.Dead, "idle");
         agent.isStopped = true;
-        healthBar.gameObject.SetActive(false);
 
         Dead = true;
         OnBotDead?.Invoke(this);
@@ -159,16 +168,25 @@ public class BaseBotAI : MonoBehaviour
         ragdollController.SetRagdoll(true);
     }
 
-    public void GetDamage(int damagePoint)
+    public virtual void GetDamage(int damagePoint)
     {
-        healthPoint -= damagePoint;
-
-        healthBar.SetHealth(healthPoint);
-
-        if (healthPoint <= 0)
+        if(armorPoint > 0)
         {
-            Die();
+            armorPoint -= damagePoint;
+            armorBar.SetValue(armorPoint);
         }
+        else
+        {
+            healthPoint -= damagePoint;
+
+            healthBar.SetValue(healthPoint);
+
+            if (healthPoint <= 0)
+            {
+                Die();
+            }
+        }
+        
     }
 
     private void ChangeAnimation(string newAnim)

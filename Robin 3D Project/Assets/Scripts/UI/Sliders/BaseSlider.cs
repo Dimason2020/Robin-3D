@@ -1,9 +1,13 @@
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class BaseSlider : MonoBehaviour
 {
+    [SerializeField] private Image damageBar;
+    [SerializeField] private Image bar;
+
     private Slider slider;
     private TextMeshProUGUI healthText;
 
@@ -25,5 +29,22 @@ public class BaseSlider : MonoBehaviour
 
         if (slider.value <= 0)
             gameObject.SetActive(false);
+        else
+            StartCoroutine(FillDamage());
+    }
+
+    private IEnumerator FillDamage()
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        while(damageBar.fillAmount > bar.fillAmount)
+        {
+            damageBar.fillAmount -= 0.01f;
+
+            yield return null;
+
+            if (damageBar.fillAmount <= bar.fillAmount)
+                yield break;
+        }
     }
 }

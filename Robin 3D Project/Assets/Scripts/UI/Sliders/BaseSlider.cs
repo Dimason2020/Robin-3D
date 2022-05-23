@@ -8,8 +8,8 @@ public class BaseSlider : MonoBehaviour
     [SerializeField] private Image damageBar;
     [SerializeField] private Image bar;
 
-    private Slider slider;
-    private TextMeshProUGUI healthText;
+    protected Slider slider;
+    protected TextMeshProUGUI healthText;
 
     protected virtual void Awake()
     {
@@ -22,7 +22,7 @@ public class BaseSlider : MonoBehaviour
         slider.maxValue = maxPoint;
     }
 
-    public void SetValue(int point)
+    public virtual void SetValue(int point)
     {
         healthText.SetText(point.ToString());
         slider.value = point;
@@ -33,7 +33,7 @@ public class BaseSlider : MonoBehaviour
             StartCoroutine(FillDamage());
     }
 
-    private IEnumerator FillDamage()
+    protected IEnumerator FillDamage()
     {
         yield return new WaitForSeconds(1.5f);
 

@@ -9,9 +9,6 @@ public class BaseBotData : MainCharacterData
     [Header("Скорость движения при раше")]
     public float rushSpeed;
 
-    [Header("Очки урона")]
-    public int damagePoint;
-
     [Header("Дистанция реагирования")]
     public float triggerDistance;
 

@@ -11,7 +11,7 @@ public class BaseSlider : MonoBehaviour
     private Slider slider;
     private TextMeshProUGUI healthText;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         slider = GetComponent<Slider>();
         healthText = GetComponentInChildren<TextMeshProUGUI>();

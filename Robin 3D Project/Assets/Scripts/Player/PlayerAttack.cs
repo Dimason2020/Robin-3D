@@ -7,6 +7,16 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Transform shootPoint;
     [SerializeField] private Projectile projectile;
 
+    private Player player;
+    private MainCharacterData characterData;
+
+
+    private void Awake()
+    {
+        player = GetComponent<Player>();
+
+        characterData = player.Data;
+    }
 
     public void Attack()
     {
@@ -14,6 +24,6 @@ public class PlayerAttack : MonoBehaviour
             shootPoint.position, 
             shootPoint.rotation);
 
-        arrow.SetProjectile(CharacterType.Enemy);
+        arrow.SetProjectile(CharacterType.Enemy, characterData.attackPoint);
     }
 }

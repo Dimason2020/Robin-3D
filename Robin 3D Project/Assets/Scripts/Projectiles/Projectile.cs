@@ -7,6 +7,8 @@ public class Projectile : MonoBehaviour
     private Rigidbody rb;
     private CharacterType targetType;
 
+    private int damagePoint;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -18,8 +20,9 @@ public class Projectile : MonoBehaviour
         rb.velocity = transform.forward * 15f;
     }
 
-    public void SetProjectile(CharacterType _targetType)
+    public void SetProjectile(CharacterType _targetType, int _damagePoint)
     {
+        damagePoint = _damagePoint;
         targetType = _targetType;
         Fly();
         StartCoroutine(DisableProjectile());
@@ -37,14 +40,14 @@ public class Projectile : MonoBehaviour
         if(collider.TryGetComponent(out BaseBotAI bot)
             && targetType == bot.Type)
         {
-            bot.GetDamage(25);
+            bot.GetDamage(damagePoint);
             gameObject.SetActive(false);
         }
 
         if (collider.TryGetComponent(out Player player)
             && targetType == player.Type)
         {
-            //player.GetDamage(25);
+            player.GetDamage(damagePoint);
             gameObject.SetActive(false);
         }
     }

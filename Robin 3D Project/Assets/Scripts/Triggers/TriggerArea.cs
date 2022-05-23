@@ -35,12 +35,19 @@ public class TriggerArea : MonoBehaviour
 
         triggerCollider.radius = botData.triggerDistance;
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(out Player player))
+        if(other.TryGetComponent(out Player player)
+            && player.PlayerState != PlayerStates.Die)
         {
             target = player.transform;
             playerInRange = true;
+
+            player.OnPlayerDead += () =>
+            {
+                playerInRange = false;
+            };
         }
     }
 

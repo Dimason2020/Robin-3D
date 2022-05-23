@@ -46,6 +46,12 @@ public class PlayerAnimator : MonoBehaviour
 
                 animator.SetBool("focusedMove", true);
                 break;
+
+            case PlayerStates.Die:
+
+                animator.SetBool("focusedMove", false);
+                SetAnimation("die");
+                break;
         }
     }
 
@@ -53,6 +59,7 @@ public class PlayerAnimator : MonoBehaviour
     {
         animator.SetBool("idle", false);
         animator.SetBool("move", false);
+        animator.SetBool("die", false);
 
         animator.SetBool(newAnim, true);
         SetAnimationVelocity();

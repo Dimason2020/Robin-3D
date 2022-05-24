@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Player : Singleton<Player>
@@ -13,8 +12,10 @@ public class Player : Singleton<Player>
     public CharacterType Type { get => type;  }
     [SerializeField] private CharacterType type;
 
+    public MainCharacterData Data { get => characterData; }
     [SerializeField] private MainCharacterData characterData;
 
+    private PlayerHealthBar healthBar;
     private TouchInput touchInput;
     private FocusArea focusArea;
     private Transform target;
@@ -22,17 +23,31 @@ public class Player : Singleton<Player>
 
     private Vector3 currentVelocity;
 
+    private int healthPoint;
+
+    public Action OnPlayerDead;
+
     public override void Awake()
     {
         base.Awake();
 
         rotationType = RotationType.NotFocused;
 
+    }
+
+    private void Start()
+    {
         touchInput = TouchInput.Instance;
+        healthBar = PlayerHealthBar.Instance;
 
         focusArea = GetComponentInChildren<FocusArea>();
         rb = GetComponent<Rigidbody>();
         ChangeState(PlayerStates.Idle);
+
+        healthPoint = characterData.healthPoint;
+        healthBar.SetMaxValue(characterData.healthPoint);
+        healthBar.SetValue(healthPoint);
+        
     }
 
     private void Update()
@@ -62,6 +77,10 @@ public class Player : Singleton<Player>
                 Move();
                 Attack();
                 Rotate();
+                break;
+
+            case PlayerStates.Die:
+
                 break;
         }
     }
@@ -136,5 +155,18 @@ public class Player : Singleton<Player>
     {
         target = _target;
         rotationType = _rotationType;
+    }
+
+    public void GetDamage(int damagePoint)
+    {
+        healthPoint -= damagePoint;
+
+        healthBar.SetValue(healthPoint);
+
+        if(healthPoint <= 0)
+        {
+            ChangeState(PlayerStates.Die);
+            OnPlayerDead?.Invoke();
+        }
     }
 }

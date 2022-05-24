@@ -5,6 +5,10 @@ public class MainCharacterData : ScriptableObject
 {
     [Header("Скорость")]
     public int movementSpeed;
+
     [Header("Очки здоровья")]
     public int healthPoint;
+
+    [Header("Очки урона")]
+    public int attackPoint;
 }

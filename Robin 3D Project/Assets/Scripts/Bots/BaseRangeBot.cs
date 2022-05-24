@@ -13,7 +13,7 @@ public class BaseRangeBot : BaseBotAI
             shootPoint.position,
             shootPoint.rotation);
 
-        arrow.SetProjectile(CharacterType.Friend);
+        arrow.SetProjectile(CharacterType.Friend, botData.attackPoint);
     }
 
     protected override void Cooldown()

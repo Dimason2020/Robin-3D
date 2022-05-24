@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Archerman Enemy
   m_EditorClassIdentifier: 
   movementSpeed: 10
-  healthPoint: 1000
+  healthPoint: 50
   attackPoint: 0
   armorPoint: 0
   rushSpeed: 0

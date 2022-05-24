@@ -16,35 +16,40 @@ public class Archerman : BaseRangeBot
 
     public void SetRandomPosition()
     {
-        randomPoint = transform.position + Random.insideUnitSphere * radius;
-        randomPoint = new Vector3(randomPoint.x, transform.position.y, randomPoint.z);
         if (!GroundCheck())
         {
             SetRandomPosition();
         }
-        if (agent.CalculatePath(transform.position, navMeshPath))
+        else
         {
             agent.isStopped = false;
             agent.SetDestination(randomPoint);
-        }
-        else
-        {
-            Debug.Log("NavMeshAgent not on nav mesh.");
-        }
 
-        ChangeState(BotState.Move, "move");
+            ChangeState(BotState.Move, "move");
+        }
+        
     }
 
     private bool GroundCheck()
     {
-        return Physics.Raycast(randomPoint, new Vector3(randomPoint.x, -randomPoint.y, randomPoint.z), Mathf.Infinity, groundMask);
+        //return Physics.Raycast(randomPoint, new Vector3(randomPoint.x, -randomPoint.y, randomPoint.z), Mathf.Infinity, groundMask);
+        randomPoint = transform.position + Random.insideUnitSphere * radius;
+        randomPoint = new Vector3(randomPoint.x, transform.position.y, randomPoint.z);
+
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(randomPoint, out hit, 1f, NavMesh.AllAreas))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     protected override void Move()
     {
         float distance = Vector3.Distance(transform.position, randomPoint);
 
-        if (distance <= 0.1f) ChangeState(BotState.Idle, "idle");
+        if (distance <= 1f) ChangeState(BotState.Idle, "idle");
     }
 
     protected override void Cooldown()
@@ -59,5 +64,10 @@ public class Archerman : BaseRangeBot
         }
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(randomPoint, 0.5f);
+    }
 
 }

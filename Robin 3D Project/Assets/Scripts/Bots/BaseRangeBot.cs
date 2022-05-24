@@ -22,4 +22,14 @@ public class BaseRangeBot : BaseBotAI
 
         RotateToTarget();
     }
+
+    protected override void Idle()
+    {
+        agent.isStopped = true;
+        
+        if (triggerArea.Distance <= botData.attackDistance)
+        {
+            ChangeState(BotState.Attack, "attack");
+        }
+    }
 }

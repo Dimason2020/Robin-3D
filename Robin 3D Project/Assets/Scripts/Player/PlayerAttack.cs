@@ -18,7 +18,7 @@ public class PlayerAttack : MonoBehaviour
         characterData = player.Data;
     }
 
-    public void Attack()
+    public void Shoot()
     {
         Projectile arrow = Instantiate(projectile, 
             shootPoint.position, 

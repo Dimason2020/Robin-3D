@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TriggerArea : MonoBehaviour
 {
-    [SerializeField] private BaseBotData botData;
+    private BaseBotData botData;
     private BaseBotAI botAI;
 
     private SphereCollider triggerCollider;

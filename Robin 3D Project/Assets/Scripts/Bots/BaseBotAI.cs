@@ -18,11 +18,12 @@ public class BaseBotAI : MonoBehaviour
     private ArmorBar armorBar;
     protected TriggerArea triggerArea;
 
-    protected BotState botState;
+
+    [SerializeField] protected BotState botState;
     public CharacterType Type { get => characterType; }
     [SerializeField] protected CharacterType characterType;
 
-    private float cooldown = 3f;
+    protected float cooldown = 3f;
     protected int healthPoint;
     protected int armorPoint;
 

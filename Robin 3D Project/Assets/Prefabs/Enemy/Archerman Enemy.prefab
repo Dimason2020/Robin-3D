@@ -752,6 +752,9 @@ MonoBehaviour:
   arrowPrefab: {fileID: -7234523490657428290, guid: ccabe9583be80434698e6d6dc6a7a0b2, type: 3}
   shootPoint: {fileID: 5500411007700022097}
   radius: 10
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &8365036618851487536
 GameObject:
   m_ObjectHideFlags: 0

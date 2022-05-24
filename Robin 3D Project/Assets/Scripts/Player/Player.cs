@@ -166,6 +166,7 @@ public class Player : Singleton<Player>
         if(healthPoint <= 0)
         {
             ChangeState(PlayerStates.Die);
+            rb.velocity = Vector3.zero;
             OnPlayerDead?.Invoke();
         }
     }

@@ -15,8 +15,14 @@ public class TriggerArea : MonoBehaviour
     {
         get
         {
-            float distance = Vector3.Distance(transform.position, target.position);
-            return distance;
+            if (target != null)
+            {
+
+                float distance = Vector3.Distance(transform.position, target.position);
+                return distance;
+            }
+
+            return Mathf.Infinity;
         }
     }
 
@@ -38,7 +44,7 @@ public class TriggerArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(out Player player)
+        if (other.TryGetComponent(out Player player)
             && player.PlayerState != PlayerStates.Die)
         {
             target = player.transform;

@@ -6,6 +6,7 @@ public class Archerman : BaseRangeBot
     public float radius = 10.0f;
     private NavMeshPath navMeshPath;
     private Vector3 randomPoint;
+    [SerializeField] private LayerMask groundMask;
 
     protected override void Start()
     {
@@ -36,8 +37,7 @@ public class Archerman : BaseRangeBot
 
     private bool GroundCheck()
     {
-        Debug.Log(new Vector3(randomPoint.x, -randomPoint.y, randomPoint.z));
-        return Physics.Raycast(randomPoint, new Vector3(randomPoint.x, -randomPoint.y, randomPoint.z), Mathf.Infinity, 3);
+        return Physics.Raycast(randomPoint, new Vector3(randomPoint.x, -randomPoint.y, randomPoint.z), Mathf.Infinity, groundMask);
     }
 
     protected override void Move()

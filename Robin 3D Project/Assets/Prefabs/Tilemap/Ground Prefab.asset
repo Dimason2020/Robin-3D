@@ -15,7 +15,7 @@ MonoBehaviour:
   m_Cells:
   - m_GameObject: {fileID: 1092910722396494324, guid: 48fd3a8d9df976848b807f3bdff3a63e, type: 3}
     m_Offset: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 0.9, y: 1, z: 0.9}
+    m_Scale: {x: 1, y: 1, z: 1}
     m_Orientation: {x: 0, y: 0, z: 0, w: 1}
   m_Size: {x: 1, y: 1, z: 1}
   m_Pivot: {x: 0, y: 0, z: 0}

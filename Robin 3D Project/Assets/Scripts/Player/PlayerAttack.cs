@@ -8,7 +8,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Projectile projectile;
 
 
-    public void Attack()
+    public void Shoot()
     {
         Projectile arrow = Instantiate(projectile, 
             shootPoint.position, 

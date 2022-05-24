@@ -493,7 +493,8 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: Event SetRandomPosition has a time (1.340194) outside
+      the clip's valid range (0.000000..1.333333). It will never be fired
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -532,7 +533,14 @@ ModelImporter:
       curves: []
       events:
       - time: 0.5006796
-        functionName: Attack
+        functionName: Shoot
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 1.0051457
+        functionName: SetRandomPosition
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

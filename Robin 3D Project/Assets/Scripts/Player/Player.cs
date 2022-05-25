@@ -169,5 +169,7 @@ public class Player : Singleton<Player>
             rb.velocity = Vector3.zero;
             OnPlayerDead?.Invoke();
         }
+
+        Debug.Log("Get Damage");
     }
 }

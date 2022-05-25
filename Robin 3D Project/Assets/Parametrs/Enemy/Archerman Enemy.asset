@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 10
   healthPoint: 50
-  attackPoint: 0
+  attackPoint: 15
   armorPoint: 0
   rushSpeed: 0
   triggerDistance: 10

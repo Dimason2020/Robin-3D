@@ -47,6 +47,8 @@ public class Projectile : MonoBehaviour
         if (collider.TryGetComponent(out Player player)
             && targetType == player.Type)
         {
+            Debug.Log("Get Hit");
+
             player.GetDamage(damagePoint);
             gameObject.SetActive(false);
         }

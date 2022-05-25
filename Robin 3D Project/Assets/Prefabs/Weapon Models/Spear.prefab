@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2326436}
   - component: {fileID: 1685076904}
   - component: {fileID: 1685076903}
+  - component: {fileID: 2563147836055429574}
   m_Layer: 0
   m_Name: Spear
   m_TagString: Untagged
@@ -109,9 +110,21 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155580}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -7591685301535871441, guid: ec9ce9573683d684aa75013daec3884d, type: 3}
+--- !u!114 &2563147836055429574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7dc99b58e5442448d5348eb07217f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

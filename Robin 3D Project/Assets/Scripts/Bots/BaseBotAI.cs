@@ -116,12 +116,17 @@ public class BaseBotAI : MonoBehaviour
 
         if(triggerArea.Distance <= botData.attackDistance)
         {
-            ChangeState(BotState.Attack, "attack");
+            StartAttack();
         }
         else if (!triggerArea.PlayerInRange)
         {
             ChangeState(BotState.Idle, "idle");
         }
+    }
+
+    protected virtual void StartAttack()
+    {
+        ChangeState(BotState.Attack, "attack");
     }
 
     protected virtual void Attack()
@@ -131,7 +136,7 @@ public class BaseBotAI : MonoBehaviour
         RotateToTarget();
     }
 
-    public void StartCooldown()
+    public virtual void StartCooldown()
     {
         ChangeState(BotState.Cooldown, "idle");
         Debug.Log("Start Cooldown");

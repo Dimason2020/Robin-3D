@@ -29,7 +29,7 @@ public class BaseRangeBot : BaseBotAI
         
         if (triggerArea.Distance <= botData.attackDistance)
         {
-            ChangeState(BotState.Attack, "attack");
+            StartAttack();
         }
     }
 }

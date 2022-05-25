@@ -60,7 +60,7 @@ public class Spearman : BaseMeleeBot
         if(triggerArea.Distance <= botData.attackDistance
             || distanceToRushTarget <= botData.attackDistance)
         {
-            ChangeState(BotState.Attack, "attack");
+            StartAttack();
 
             agent.speed = botData.movementSpeed;
 

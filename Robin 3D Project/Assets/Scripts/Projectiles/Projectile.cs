@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     private Rigidbody rb;
-    private CharacterType targetType;
+    [SerializeField] private CharacterType targetType;
 
     private int damagePoint;
 

@@ -4,15 +4,7 @@ using UnityEngine.AI;
 public class Archerman : BaseRangeBot
 {
     public float radius = 10.0f;
-    private NavMeshPath navMeshPath;
     private Vector3 randomPoint;
-    [SerializeField] private LayerMask groundMask;
-
-    protected override void Start()
-    {
-        base.Start();
-        navMeshPath = new NavMeshPath();
-    }
 
     public void SetRandomPosition()
     {
@@ -32,7 +24,6 @@ public class Archerman : BaseRangeBot
 
     private bool GroundCheck()
     {
-        //return Physics.Raycast(randomPoint, new Vector3(randomPoint.x, -randomPoint.y, randomPoint.z), Mathf.Infinity, groundMask);
         randomPoint = transform.position + Random.insideUnitSphere * radius;
         randomPoint = new Vector3(randomPoint.x, transform.position.y, randomPoint.z);
 

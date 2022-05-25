@@ -34,7 +34,7 @@ public class FocusArea : MonoBehaviour
                 RotationType.Focused);
 
             targetCircle.position = new Vector3(targetPos.position.x,
-                targetCircle.position.y,
+                targetPos.position.y,
                 targetPos.position.z);
             targetCircle.gameObject.SetActive(true);
 

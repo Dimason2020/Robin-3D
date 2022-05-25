@@ -27,14 +27,20 @@ public class CameraTarget : Singleton<CameraTarget>
 
     private void FixedUpdate()
     {
-        if(showTarget) transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
-        else transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime * 50);
+        if(showTarget) distance = Vector3.Distance(transform.position, target.position);
 
+        if (player.PlayerState != PlayerStates.Die)
+        {
+            FollowToPlayer();
+        }
     }
 
-    private void Update()
+    private void FollowToPlayer()
     {
-        if(showTarget) distance = Vector3.Distance(transform.position, target.position);
+        transform.position =
+                Vector3.Lerp(transform.position,
+                target.position,
+                Time.deltaTime * 50);
     }
 
     public void ChangeTarget(Transform newTarget, float lookTime)

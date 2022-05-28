@@ -47,6 +47,12 @@ public class PlayerAnimator : MonoBehaviour
                 animator.SetBool("focusedMove", true);
                 break;
 
+            case PlayerStates.EnterShop:
+
+                animator.SetBool("focusedMove", false);
+                SetAnimation("idle");
+                break;
+
             case PlayerStates.Die:
 
                 animator.SetBool("focusedMove", false);

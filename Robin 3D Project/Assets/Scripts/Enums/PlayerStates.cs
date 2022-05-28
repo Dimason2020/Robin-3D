@@ -5,5 +5,6 @@ public enum PlayerStates
     Move,
     IdleAndAim,
     MoveAndAim,
+    EnterShop,
     Die
 }

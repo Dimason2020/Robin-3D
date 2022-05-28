@@ -79,6 +79,10 @@ public class Player : Singleton<Player>
                 Rotate();
                 break;
 
+            case PlayerStates.EnterShop:
+                Stay();
+                break;
+
             case PlayerStates.Die:
 
                 break;
@@ -144,6 +148,12 @@ public class Player : Singleton<Player>
                 }
                 break;
         }
+    }
+
+    private void Stay()
+    {
+        currentVelocity = Vector3.zero;
+        rb.velocity = currentVelocity.normalized;
     }
 
     public void ChangeState(PlayerStates newState)

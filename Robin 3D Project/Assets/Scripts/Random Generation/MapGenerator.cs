@@ -44,9 +44,9 @@ public class MapGenerator : Singleton<MapGenerator>
 
         if(roomCount >= maxRoomCount)
         {
-            Debug.Log("End Generation");
             OnMaxRoomCountReached?.Invoke();
             navMeshBaker.Bake();
+            Debug.Log("Bake");
         }
     }
 

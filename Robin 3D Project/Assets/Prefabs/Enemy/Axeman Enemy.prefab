@@ -276,7 +276,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   botData: {fileID: 11400000, guid: 4f55f45a44fe6e347b68a386a149f3a6, type: 2}
-  Dead: 0
+  botState: 0
+  characterType: 0
+  meleeWeapon: {fileID: 0}
 --- !u!195 &5525659479180687937
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2320,7 +2322,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d3f2e1069a5f0042b75101c4bcfeacb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  botData: {fileID: 0}
 --- !u!1 &5525659480199714622
 GameObject:
   m_ObjectHideFlags: 0
@@ -2653,18 +2654,6 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 497648, guid: 3c9ff5b6e6a93c54e90af4d1d0267fd2, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 497648, guid: 3c9ff5b6e6a93c54e90af4d1d0267fd2, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 497648, guid: 3c9ff5b6e6a93c54e90af4d1d0267fd2, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 497648, guid: 3c9ff5b6e6a93c54e90af4d1d0267fd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.047
       objectReference: {fileID: 0}
@@ -2704,10 +2693,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 79.855
       objectReference: {fileID: 0}
-    - target: {fileID: 497648, guid: 3c9ff5b6e6a93c54e90af4d1d0267fd2, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c9ff5b6e6a93c54e90af4d1d0267fd2, type: 3}
 --- !u!4 &5525659478789399948 stripped
@@ -2715,38 +2700,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 497648, guid: 3c9ff5b6e6a93c54e90af4d1d0267fd2, type: 3}
   m_PrefabInstance: {fileID: 5525659478789501564}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5525659478789600450 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 165566, guid: 3c9ff5b6e6a93c54e90af4d1d0267fd2, type: 3}
-  m_PrefabInstance: {fileID: 5525659478789501564}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1220646663
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5525659478789600450}
-  serializedVersion: 2
-  m_Mass: 4
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &1220646664
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5525659478789600450}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300014, guid: aa57ef125a5f4ca449b60c3a05fac3bd, type: 3}

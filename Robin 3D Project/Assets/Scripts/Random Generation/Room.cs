@@ -54,7 +54,7 @@ public class Room : MonoBehaviour
     {
         KIDOS();
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.25f);
 
         direction = (Direction)Random.Range(0, 4);
 

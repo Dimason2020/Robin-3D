@@ -1,7 +1,7 @@
-using System;
 using System.Collections;
-using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine;
+using System;
 
 public class MapGenerator : Singleton<MapGenerator>
 {
@@ -12,7 +12,7 @@ public class MapGenerator : Singleton<MapGenerator>
     [SerializeField] private int maxRoomCount;
     private int roomCount = 1;
 
-    [SerializeField] private NavMeshSurface navMeshSurface;
+    private NavMeshBaker navMeshBaker;
 
     public Room RandomRoom
     {
@@ -31,6 +31,8 @@ public class MapGenerator : Singleton<MapGenerator>
 
     private IEnumerator Start()
     {
+        navMeshBaker = GetComponent<NavMeshBaker>();
+
         yield return new WaitForSeconds(SpawnCooldown);
 
         startRoom.StartCoroutine(startRoom.SetRandomDirection());
@@ -42,9 +44,14 @@ public class MapGenerator : Singleton<MapGenerator>
 
         if(roomCount >= maxRoomCount)
         {
-            Debug.Log("Action !");
+            Debug.Log("End Generation");
             OnMaxRoomCountReached?.Invoke();
-            navMeshSurface.BuildNavMesh();
+            navMeshBaker.Bake();
         }
+    }
+
+    public void AddSurfaceToBaker(NavMeshSurface surface)
+    {
+        navMeshBaker.AddSurfaceToList(surface);
     }
 }

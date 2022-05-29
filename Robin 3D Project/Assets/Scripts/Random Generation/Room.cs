@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.AI;
 using UnityEngine;
 
 public class Room : MonoBehaviour
@@ -22,15 +22,22 @@ public class Room : MonoBehaviour
 
     private MapGenerator mapGenerator;
     private Transform spawnPoint;
+    private NavMeshSurface meshSurface;
+
+    private void Awake()
+    {
+        meshSurface = GetComponent<NavMeshSurface>();
+    }
 
     private void Start()
     {
         mapGenerator = MapGenerator.Instance;
+        mapGenerator.AddSurfaceToBaker(meshSurface);
 
         mapGenerator.OnMaxRoomCountReached += () =>
         {
             StopCoroutine(SetRandomDirection());
-            Debug.Log("Stopped Coroutine !");
+            
         };
     }
 
@@ -50,8 +57,6 @@ public class Room : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         direction = (Direction)Random.Range(0, 4);
-
-        Debug.Log("Get direction : " + direction);
 
         switch (direction)
         {

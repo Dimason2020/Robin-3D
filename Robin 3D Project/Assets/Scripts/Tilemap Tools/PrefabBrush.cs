@@ -1,7 +1,10 @@
 using UnityEditor;
+#if UNITY_EDITOR
 using UnityEditor.Tilemaps;
+#endif
 using UnityEngine;
 
+#if UNITY_EDITOR
 [CreateAssetMenu(fileName = "Prefab Brush", menuName = "Brushes/Prefab Brush")]
 [CustomGridBrush(false, true, false, "Prefab Brush")]
 
@@ -14,7 +17,7 @@ public class PrefabBrush : GameObjectBrush
         //if(brushTarget.layer == 31)
         //{
         //    return;
-        //}
+        //} 
 
         Transform erased = GetObjectInCell(gridLayout, brushTarget.transform,
             new Vector3Int(position.x, position.y, 0));
@@ -56,3 +59,4 @@ public class PrefabBrush : GameObjectBrush
 
     }
 }
+#endif

@@ -1588,7 +1588,7 @@ MonoBehaviour:
   spawnCooldown: 0.25
   maxRoomCount: 5
   roomPrefabs:
-  - {fileID: 1628741660025483796, guid: 253ece952f4bd2b428b09897539e29c4, type: 3}
+  - {fileID: 2769371546257801634, guid: b1c7db710031cca448b8ba6514db08e3, type: 3}
   startRoom: {fileID: 1335052022559898056}
   corridor: {fileID: 8144249096559496937, guid: 569c97abb6844b149adabaaa871b3ef3, type: 3}
 --- !u!114 &1866109325

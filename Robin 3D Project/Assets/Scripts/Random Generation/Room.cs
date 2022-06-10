@@ -185,7 +185,7 @@ public class Room : MonoBehaviour
         if (!mapGenerator.IsMaxRoomCountReached)
         {
             Corridor corridor = Instantiate(mapGenerator.corridor,
-            new Vector3(spawnPoint.position.x, 5.5f, spawnPoint.position.z),
+            new Vector3(spawnPoint.position.x, 4.7f, spawnPoint.position.z),
             spawnPoint.rotation);
 
             corridor.transform.SetParent(mapGenerator.transform);

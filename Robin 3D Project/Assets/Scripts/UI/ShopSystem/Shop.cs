@@ -17,14 +17,9 @@ public class Shop : MonoBehaviour
         SetListeners();
     }
 
-    private void Start()
+    public void ShowShopUI(Player player)
     {
-        ShopCollider.OnShopEnter += ShowShopUI;
-    }
-
-    private void ShowShopUI(object sender, ShopCollider.OnShopEnterEventArgs eventArgs)
-    {
-        _player = eventArgs.playerObject;
+        _player = player;
         _player.ChangeState(PlayerStates.EnterShop);
         _shopCanvas.SetActive(true);
         _camera.SetActive(true);

@@ -994,7 +994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 0
-  anchorPoint: {fileID: 3537591322929148693}
+  anchorPoint: {fileID: 5349164334030483427}
   tilemaps: {fileID: 6229838177750499799}
   forwardPoint: {fileID: 5349164334030483427}
   backPoint: {fileID: 8707969223401174235}

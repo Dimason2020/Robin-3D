@@ -132,7 +132,7 @@ public class Room : MonoBehaviour
         float distance = Vector3.Distance(transform.position,
             anchorPoint.position);
 
-        
+        Debug.Log("Distance : " + distance);
 
         switch (direction)
         {

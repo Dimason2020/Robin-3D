@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 0
-  anchorPoint: {fileID: 5298193874313458146}
+  anchorPoint: {fileID: 5298193874478973924}
   tilemaps: {fileID: 5298193874173014461}
   forwardPoint: {fileID: 5298193874478973924}
   backPoint: {fileID: 5298193873566764355}

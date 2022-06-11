@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: 507357497}
   - component: {fileID: 507357496}
   - component: {fileID: 507357500}
+  - component: {fileID: 507357501}
   m_Layer: 5
   m_Name: '[ UI ]'
   m_TagString: Untagged
@@ -362,6 +363,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9e230a533047a4396ba8541402ab6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &507357501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507357495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 565290b0c09d2124b836884e08a68ed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loseButton: {fileID: 6593068594995016638}
+  winButton: {fileID: 5291463311532072829}
+  winWindow: {fileID: 5291463311765066423}
+  loseWindow: {fileID: 6593068595355636372}
 --- !u!1 &564699046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,9 +1813,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnCooldown: 0.25
-  maxRoomCount: 10
+  maxRoomCount: 2
   roomPrefabs:
-  - {fileID: 5298193872688332229, guid: 770386151ac834747ade5b36e51b21dc, type: 3}
   - {fileID: 2769371546257801634, guid: b1c7db710031cca448b8ba6514db08e3, type: 3}
   startRoom: {fileID: 1335052022559898056}
   corridor: {fileID: 8144249096559496937, guid: 569c97abb6844b149adabaaa871b3ef3, type: 3}

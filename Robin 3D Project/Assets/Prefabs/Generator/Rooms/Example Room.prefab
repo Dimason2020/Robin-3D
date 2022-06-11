@@ -484,6 +484,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3295226260098112547}
+  - component: {fileID: 549753364494731027}
   m_Layer: 0
   m_Name: Axeman Group
   m_TagString: Untagged
@@ -509,6 +510,19 @@ Transform:
   m_Father: {fileID: 4108298150422509563}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &549753364494731027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4474406451439504609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d12cfd8535ff1a4b89fdef64a4e8a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemys: []
 --- !u!1 &4820691457029991306
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,6 +785,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1817106835828145352}
+  - component: {fileID: 5805859977970068413}
   m_Layer: 0
   m_Name: Spearman Group
   m_TagString: Untagged
@@ -794,6 +809,19 @@ Transform:
   m_Father: {fileID: 4108298150422509563}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5805859977970068413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5933075773504005838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d12cfd8535ff1a4b89fdef64a4e8a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemys: []
 --- !u!1 &6809876829314049439
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,6 +908,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3689416048678599896}
+  - component: {fileID: 575616560909189097}
   m_Layer: 0
   m_Name: Archer Group
   m_TagString: Untagged
@@ -904,6 +933,19 @@ Transform:
   m_Father: {fileID: 4108298150422509563}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &575616560909189097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7137212381964616668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d12cfd8535ff1a4b89fdef64a4e8a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemys: []
 --- !u!1 &7536710461327616369
 GameObject:
   m_ObjectHideFlags: 0

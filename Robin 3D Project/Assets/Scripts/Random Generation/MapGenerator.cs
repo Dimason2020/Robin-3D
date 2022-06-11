@@ -12,6 +12,7 @@ public class MapGenerator : Singleton<MapGenerator>
     [SerializeField] private int maxRoomCount;
     private int roomCount = 1;
 
+    private EnemyHandler enemyHandler;
     private NavMeshBaker navMeshBaker;
 
     public Room RandomRoom
@@ -32,6 +33,7 @@ public class MapGenerator : Singleton<MapGenerator>
     private IEnumerator Start()
     {
         navMeshBaker = GetComponent<NavMeshBaker>();
+        enemyHandler = GetComponent<EnemyHandler>();
 
         yield return new WaitForSeconds(SpawnCooldown);
 
@@ -45,9 +47,20 @@ public class MapGenerator : Singleton<MapGenerator>
         if(roomCount >= maxRoomCount)
         {
             OnMaxRoomCountReached?.Invoke();
+
+            enemyHandler.GetEnemyGroups();
+            //StartCoroutine(GetEnemyGroups());
             navMeshBaker.Bake();
+
             Debug.Log("Bake");
         }
+    }
+
+    private IEnumerator GetEnemyGroups()
+    {
+        yield return new WaitForSeconds(1.25f);
+
+        enemyHandler.GetEnemyGroups();
     }
 
     public void AddSurfaceToBaker(NavMeshSurface surface)

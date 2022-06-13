@@ -819,7 +819,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.41973302, y: -0.000000015617333, z: 0.0000000072220865, w: 0.90764767}
+  m_LocalRotation: {x: 0.41973302, y: 0.000000015617328, z: -0.0000000072220843, w: 0.90764767}
   m_LocalPosition: {x: 2.2489805, y: 19.148603, z: -15.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1055,7 +1055,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.46205357, y: 1}
+    m_SensorSize: {x: 0.4864865, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1071,7 +1071,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225898306}
-  m_LocalRotation: {x: 0.41973302, y: -0.000000015617333, z: 0.0000000072220865, w: 0.90764767}
+  m_LocalRotation: {x: 0.41973302, y: 0.000000015617328, z: -0.0000000072220843, w: 0.90764767}
   m_LocalPosition: {x: 2.2489805, y: 19.148603, z: -15.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1813,9 +1813,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnCooldown: 0.25
-  maxRoomCount: 2
+  maxRoomCount: 4
   roomPrefabs:
-  - {fileID: 2769371546257801634, guid: b1c7db710031cca448b8ba6514db08e3, type: 3}
+  - {fileID: 5298193872688332229, guid: 6c2696f27bb92194193f3e8f2ec79b7b, type: 3}
+  - {fileID: 5298193872688332229, guid: 1314c30a1a33806469fa6b97e170e9ee, type: 3}
   startRoom: {fileID: 1335052022559898056}
   corridor: {fileID: 8144249096559496937, guid: 569c97abb6844b149adabaaa871b3ef3, type: 3}
 --- !u!114 &1866109325

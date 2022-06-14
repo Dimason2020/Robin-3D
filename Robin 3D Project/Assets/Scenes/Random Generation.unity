@@ -1813,10 +1813,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnCooldown: 0.25
-  maxRoomCount: 4
+  maxRoomCount: 8
   roomPrefabs:
-  - {fileID: 5298193872688332229, guid: 6c2696f27bb92194193f3e8f2ec79b7b, type: 3}
   - {fileID: 5298193872688332229, guid: 1314c30a1a33806469fa6b97e170e9ee, type: 3}
+  - {fileID: 5298193872688332229, guid: 6c2696f27bb92194193f3e8f2ec79b7b, type: 3}
+  - {fileID: 5298193872688332229, guid: ac8f49eb8c137ad44a05737fd34108a6, type: 3}
+  - {fileID: 5298193872688332229, guid: 770386151ac834747ade5b36e51b21dc, type: 3}
   startRoom: {fileID: 1335052022559898056}
   corridor: {fileID: 8144249096559496937, guid: 569c97abb6844b149adabaaa871b3ef3, type: 3}
 --- !u!114 &1866109325

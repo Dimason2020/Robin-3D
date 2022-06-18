@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 33235111210149352}
   - component: {fileID: 23874696224731434}
   - component: {fileID: 5864049505930405539}
-  m_Layer: 0
+  - component: {fileID: 3722882661399494247}
+  m_Layer: 8
   m_Name: ForestTreePineShort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852941587909970}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -44.17, y: -2.95, z: 17.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -98,3 +99,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 54e159d3356cea14996fb2dc32d85269, type: 3}
+--- !u!114 &3722882661399494247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852941587909970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4cd4f564eb4d1749936f2b0cc74b3c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

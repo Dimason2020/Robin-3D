@@ -37,19 +37,22 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if(collider.TryGetComponent(out BaseBotAI bot)
+        if (collider.TryGetComponent(out BaseBotAI bot)
             && targetType == bot.Type)
         {
             bot.GetDamage(damagePoint);
             gameObject.SetActive(false);
         }
-
-        if (collider.TryGetComponent(out Player player)
+        else if (collider.TryGetComponent(out Player player)
             && targetType == player.Type)
         {
             Debug.Log("Get Hit");
 
             player.GetDamage(damagePoint);
+            gameObject.SetActive(false);
+        }
+        else if (collider.TryGetComponent(out Decor decor))
+        {
             gameObject.SetActive(false);
         }
     }

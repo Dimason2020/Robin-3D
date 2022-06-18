@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 1628708454226580713}
   - component: {fileID: 198321636804899033}
   - component: {fileID: 8690974794058219925}
+  - component: {fileID: 5077767730423193223}
   m_Layer: 0
   m_Name: Corridor
   m_TagString: Untagged
@@ -324,8 +325,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 18.631737, y: 1.3033984, z: 0.5449457}
-  m_Center: {x: 0.88152695, y: -3.9971123, z: -3.9810386}
+  m_Size: {x: 18.631737, y: 1.987679, z: 0.5449457}
+  m_Center: {x: 0.88152695, y: -3.6549718, z: -3.9810386}
 --- !u!65 &8690974794058219925
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -337,8 +338,20 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 18.631737, y: 1.3280158, z: 0.5222473}
-  m_Center: {x: 0.88152695, y: -4.0567636, z: 3.8742504}
+  m_Size: {x: 18.631737, y: 2.1286867, z: 0.5222473}
+  m_Center: {x: 0.88152695, y: -3.6564283, z: 3.8742504}
+--- !u!114 &5077767730423193223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3118848066476287860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4cd4f564eb4d1749936f2b0cc74b3c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &27759465544919485
 PrefabInstance:
   m_ObjectHideFlags: 0

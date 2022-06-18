@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33484951287017684}
   - component: {fileID: 23277606860189602}
   - component: {fileID: 7445580279332121528}
+  - component: {fileID: 8442986817160544040}
   m_Layer: 8
   m_Name: ForestTreeAppleShort
   m_TagString: Untagged
@@ -98,3 +99,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 55d234882e9a60747b3208b956d8244b, type: 3}
+--- !u!114 &8442986817160544040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296487970245184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4cd4f564eb4d1749936f2b0cc74b3c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88487fc96b93c7448a01b7101a30d3fd, type: 3}
   m_Name: Axeman Enemy
   m_EditorClassIdentifier: 
-  movementSpeed: 7
+  movementSpeed: 8
   healthPoint: 50
   attackPoint: 10
   armorPoint: 0
@@ -20,5 +20,5 @@ MonoBehaviour:
   triggerDistance: 12
   attackDistance: 3
   rushStartDistance: 0
-  cooldownTime: 0.5
+  cooldownTime: 0.4
   rotationOffset: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33088221510746090}
   - component: {fileID: 23772034789106490}
   - component: {fileID: 5640810848220335298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ForestTreeDShort
   m_TagString: Untagged
   m_Icon: {fileID: 0}

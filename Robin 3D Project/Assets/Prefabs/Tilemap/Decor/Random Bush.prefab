@@ -277,10 +277,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ForestTreeDShort
       objectReference: {fileID: 0}
-    - target: {fileID: 1398384037247820, guid: 018e38b65bc9fb048a9c4271cdad70c2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4666323329268654, guid: 018e38b65bc9fb048a9c4271cdad70c2, type: 3}
       propertyPath: m_RootOrder
       value: 0

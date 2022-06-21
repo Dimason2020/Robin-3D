@@ -47,7 +47,6 @@ public class Bow : MonoBehaviour
         if (_weaponType == Weapons.Simple)
         {
             Buy();
-            Equip();
         }
     }
 
@@ -63,6 +62,7 @@ public class Bow : MonoBehaviour
         if (_upgradeAmount < _upgradeIcon.Capacity)
         {
             _upgradeIcon[_upgradeAmount].color = Color.blue;
+            _attack += 10;
             _upgradeAmount++;
             if(_upgradeAmount == _upgradeIcon.Capacity) _upgradeButton.interactable = false;
         }

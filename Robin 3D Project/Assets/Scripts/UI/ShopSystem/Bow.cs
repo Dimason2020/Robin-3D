@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,8 +14,20 @@ public class Bow : MonoBehaviour
     [Space]
     [Header("Upgrade")]
     [SerializeField] private List<Image> _upgradeIcon;
+    [Space]
+    [Header("Essentials")]
+    [SerializeField] private Mesh _mesh;
+    [SerializeField] private int _attack = 20;
 
     private int _upgradeAmount;
+
+    public static event EventHandler<OnEquipEventArgs> OnEquip;
+
+    public class OnEquipEventArgs : EventArgs 
+    {
+        public Mesh mesh;
+        public int attack;
+    }
 
     private void Awake()
     {
@@ -50,6 +62,7 @@ public class Bow : MonoBehaviour
         if (_upgradeAmount < _upgradeIcon.Capacity)
         {
             _upgradeIcon[_upgradeAmount].color = Color.blue;
+            _attack += 10;
             _upgradeAmount++;
             if(_upgradeAmount == _upgradeIcon.Capacity) _upgradeButton.interactable = false;
         }
@@ -57,8 +70,6 @@ public class Bow : MonoBehaviour
 
     private void Equip()
     {
-        //TODO invoke an event
-        Debug.Log("Equiped");
-        _equipButton.interactable = false;
+        OnEquip?.Invoke(this, new OnEquipEventArgs { mesh = _mesh, attack = _attack });
     }
 }

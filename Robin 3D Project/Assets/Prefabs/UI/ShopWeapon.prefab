@@ -3271,6 +3271,7 @@ MonoBehaviour:
   - {fileID: 6760713380802148257}
   - {fileID: 6760713382186564205}
   - {fileID: 6760713380978565829}
+  _mesh: {fileID: 4300072, guid: 96224039a328cce408e1ba457ce7e7fd, type: 3}
 --- !u!1 &6760713381108477037
 GameObject:
   m_ObjectHideFlags: 0
@@ -3696,6 +3697,7 @@ MonoBehaviour:
   - {fileID: 6760713382250361637}
   - {fileID: 6760713381594705041}
   - {fileID: 6760713382360516204}
+  _mesh: {fileID: 4300040, guid: 96224039a328cce408e1ba457ce7e7fd, type: 3}
 --- !u!1 &6760713381192964737
 GameObject:
   m_ObjectHideFlags: 0
@@ -8121,6 +8123,7 @@ MonoBehaviour:
   - {fileID: 6760713380773231017}
   - {fileID: 6760713381297540160}
   - {fileID: 6760713381514084544}
+  _mesh: {fileID: 4300068, guid: 96224039a328cce408e1ba457ce7e7fd, type: 3}
 --- !u!1 &6760713382488310403
 GameObject:
   m_ObjectHideFlags: 0
@@ -8359,6 +8362,7 @@ MonoBehaviour:
   - {fileID: 6760713381587169260}
   - {fileID: 6760713381921933076}
   - {fileID: 6760713381272498672}
+  _mesh: {fileID: 4300066, guid: 96224039a328cce408e1ba457ce7e7fd, type: 3}
 --- !u!1 &6760713382503048737
 GameObject:
   m_ObjectHideFlags: 0

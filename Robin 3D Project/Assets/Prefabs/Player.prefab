@@ -4185,6 +4185,7 @@ MonoBehaviour:
   rotationType: 0
   type: 1
   characterData: {fileID: 11400000, guid: 50d5852d8713883409dac3cf9872007f, type: 2}
+  bowMesh: {fileID: 730571210327840871}
 --- !u!1 &846977229920327863
 GameObject:
   m_ObjectHideFlags: 0
@@ -14364,3 +14365,8 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: cc919ede1bcfa504286f7782aecad3ec, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44ac89d6f1e7d914385c5c24f0ad46a3, type: 3}
+--- !u!137 &730571210327840871 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 137296225437730128, guid: 44ac89d6f1e7d914385c5c24f0ad46a3, type: 3}
+  m_PrefabInstance: {fileID: 847878039420280119}
+  m_PrefabAsset: {fileID: 0}

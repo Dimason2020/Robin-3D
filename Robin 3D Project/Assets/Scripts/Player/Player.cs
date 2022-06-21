@@ -15,6 +15,8 @@ public class Player : Singleton<Player>
     public MainCharacterData Data { get => characterData; }
     [SerializeField] private MainCharacterData characterData;
 
+    [SerializeField] private SkinnedMeshRenderer bowMesh;
+
     private PlayerHealthBar healthBar;
     private TouchInput touchInput;
     private FocusArea focusArea;
@@ -33,6 +35,17 @@ public class Player : Singleton<Player>
 
         rotationType = RotationType.NotFocused;
 
+    }
+
+    private void OnEnable()
+    {
+        Bow.OnEquip += SetNewBowSkin;
+    }
+
+    private void SetNewBowSkin(object sender, Bow.OnEquipEventArgs e)
+    {
+        bowMesh.sharedMesh = e.mesh;
+        characterData.attackPoint = e.attack;
     }
 
     private void Start()

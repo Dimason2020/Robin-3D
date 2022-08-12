@@ -7,11 +7,11 @@ public class SpearmanBoss : Spearman
     private bool onArmorEnded;
 
     public Action OnArmorEnded;
+    public static Action OnArmorDisable;
 
     protected override void Awake()
     {
         base.Awake();
-
         Instance = this;
     }
 
@@ -25,6 +25,12 @@ public class SpearmanBoss : Spearman
             OnArmorEnded?.Invoke();
             ragdollController.ThrowArmor();
         }
+    }
+
+    protected override void Die()
+    {
+        base.Die();
+        OnArmorDisable?.Invoke();
     }
 
 }

@@ -19,7 +19,7 @@ public class MapGenerator : Singleton<MapGenerator>
     {
         get
         {
-            int roomIndex = UnityEngine.Random.Range(0, roomPrefabs.Length) ;
+            int roomIndex = UnityEngine.Random.Range(0, roomPrefabs.Length);
             return roomPrefabs[roomIndex];
         }
     }
@@ -49,7 +49,6 @@ public class MapGenerator : Singleton<MapGenerator>
             OnMaxRoomCountReached?.Invoke();
 
             enemyHandler.GetEnemyGroups();
-            //StartCoroutine(GetEnemyGroups());
             navMeshBaker.Bake();
 
             Debug.Log("Bake");

@@ -60,5 +60,4 @@ public class Archerman : BaseRangeBot
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(randomPoint, 0.5f);
     }
-
 }

@@ -986,7 +986,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.46193328, y: 1}
+    m_SensorSize: {x: 0.4864865, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1218,6 +1218,10 @@ PrefabInstance:
     - target: {fileID: 8098086198407545599, guid: 37fa2329cc42ca341b33a29f307bd83e, type: 3}
       propertyPath: m_Name
       value: ShopWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098086198407545599, guid: 37fa2329cc42ca341b33a29f307bd83e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37fa2329cc42ca341b33a29f307bd83e, type: 3}
@@ -1560,6 +1564,10 @@ PrefabInstance:
     - target: {fileID: 7011708004214230944, guid: 37b339e5af9ce1c43a54db25dd73c277, type: 3}
       propertyPath: m_Name
       value: ShopArmor
+      objectReference: {fileID: 0}
+    - target: {fileID: 7011708004214230944, guid: 37b339e5af9ce1c43a54db25dd73c277, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7011708004214230945, guid: 37b339e5af9ce1c43a54db25dd73c277, type: 3}
       propertyPath: m_RootOrder
